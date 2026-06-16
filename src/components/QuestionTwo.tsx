@@ -7,25 +7,25 @@ import { GRIMACE_FACE, MLEM_FACE } from "../constants/assets";
 export default function QuestionTwo({ onAdvance }: StepProps) {
   const [value, setValue] = useState("");
   const [shake, setShake] = useState(false);
-  const [error, setError] = useState(false);
-  const [errorShortName, setErrorShortName] = useState(false);
+  const [errorType, setErrorType] = useState<null | "wrong" | "shortName">(
+    null,
+  );
   const [confetti, setConfetti] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (value.trim().toLowerCase() === "dakota") {
-      setError(false);
+    const name = value.trim().toLowerCase();
+
+    if (name === "dakota") {
+      setErrorType(null);
       setConfetti(true);
       setTimeout(onAdvance, 1400);
-    } else if (value.trim().toLowerCase() === "kota") {
-      setErrorShortName(true);
-      setShake(true);
-      setTimeout(() => setShake(false), 500);
-    } else {
-      setError(true);
-      setShake(true);
-      setTimeout(() => setShake(false), 500);
+      return;
     }
+
+    setErrorType(name === "kota" ? "shortName" : "wrong");
+    setShake(true);
+    setTimeout(() => setShake(false), 500);
   };
 
   return (
@@ -52,7 +52,7 @@ export default function QuestionTwo({ onAdvance }: StepProps) {
           animate={shake ? { x: [0, -12, 12, -10, 10, -6, 6, 0] } : { x: 0 }}
           transition={{ duration: 0.5 }}
           className={`w-full rounded-4xl bg-white px-6 py-4 text-center text-xl font-medium text-slate-800 shadow-lg outline-none ring-2 transition placeholder:text-slate-400 ${
-            error ? "ring-rose-400" : "ring-white/60 focus:ring-sky-300"
+            errorType ? "ring-rose-400" : "ring-white/60 focus:ring-sky-300"
           }`}
         />
 
@@ -66,8 +66,8 @@ export default function QuestionTwo({ onAdvance }: StepProps) {
         </motion.button>
       </form>
 
-      <AnimatePresence>
-        {error && (
+      <AnimatePresence mode="wait">
+        {errorType === "wrong" && (
           <motion.div
             key="err"
             className="flex flex-col items-center gap-3"
@@ -75,19 +75,19 @@ export default function QuestionTwo({ onAdvance }: StepProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
           >
+            <p className="text-lg font-medium text-rose-600">
+              Nope. Not even close.
+            </p>
             {GRIMACE_FACE && (
               <img
                 src={GRIMACE_FACE}
                 alt="grimace"
-                className="h-32 w-32 rounded-3xl object-cover shadow-lg"
+                className="w-48 h-auto rounded-3xl shadow-lg"
               />
             )}
-            <p className="text-lg font-medium text-rose-600">
-              Nope. Not even close. Try again dumdum
-            </p>
           </motion.div>
         )}
-        {errorShortName && (
+        {errorType === "shortName" && (
           <motion.div
             key="errShortName"
             className="flex flex-col items-center gap-3"
@@ -95,16 +95,16 @@ export default function QuestionTwo({ onAdvance }: StepProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
           >
+            <p className="text-lg font-medium text-rose-600">
+              nahhh use proper name pls thats the cats name
+            </p>
             {MLEM_FACE && (
               <img
                 src={MLEM_FACE}
                 alt="mlem"
-                className="h-32 w-32 rounded-3xl object-cover shadow-lg"
+                className="w-48 h-auto rounded-3xl shadow-lg"
               />
             )}
-            <p className="text-lg font-medium text-rose-600">
-              Nada use proper name pls dumdum x
-            </p>
           </motion.div>
         )}
       </AnimatePresence>

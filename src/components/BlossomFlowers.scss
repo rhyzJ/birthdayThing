@@ -392,7 +392,7 @@
     }
 
     &__grass {
-      --c: #8e24aa;
+      --c: #43a047;
       --line-w: 1.5vmin;
 
       position: absolute;
@@ -570,7 +570,7 @@
     &__g-long {
       --w: 2vmin;
       --h: 6vmin;
-      --c: #8e24aa;
+      --c: #43a047;
       position: absolute;
       bottom: 10vmin;
       left: -3vmin;
@@ -621,7 +621,7 @@
         width: 30vmin;
         height: 50vmin;
         border-top-left-radius: 100%;
-        border-left: 2vmin solid #c2121f;
+        border-left: 2vmin solid #2e7d32;
         background-image: linear-gradient(
           to bottom,
           transparent,
@@ -630,7 +630,7 @@
         -webkit-mask-image: linear-gradient(
           to top,
           transparent 30%,
-          #c2121f 60%
+          #2e7d32 60%
         );
       }
 
@@ -696,7 +696,7 @@
         background-image: linear-gradient(
           to top,
           transparent,
-          #c2121f,
+          #2e7d32,
           transparent 100%
         );
         position: relative;
@@ -798,20 +798,20 @@
           ),
           linear-gradient(
             to bottom right,
-            #8e24aa 50%,
+            #2e7d32 50%,
             transparent 50%,
             transparent
           );
 
         -webkit-mask-image: linear-gradient(
           to bottom right,
-          #8e24aa 50%,
+          #2e7d32 50%,
           transparent 50%,
           transparent
         );
         mask-image: linear-gradient(
           to bottom right,
-          #8e24aa 50%,
+          #2e7d32 50%,
           transparent 50%,
           transparent
         );
@@ -841,11 +841,11 @@
         width: 30vmin;
         height: 50vmin;
         border-top-left-radius: 100%;
-        border-left: 2vmin solid #c2121f;
+        border-left: 2vmin solid #2e7d32;
         -webkit-mask-image: linear-gradient(
           to top,
           transparent 25%,
-          #c2121f 50%
+          #2e7d32 50%
         );
         position: relative;
         z-index: 1;
@@ -866,14 +866,14 @@
           ),
           linear-gradient(
             to bottom right,
-            #b388ff 45%,
+            #66bb6a 45%,
             transparent 50%,
             transparent
           );
 
         -webkit-mask-image: linear-gradient(
           135deg,
-          #8e24aa 40%,
+          #2e7d32 40%,
           transparent 50%,
           transparent
         );
@@ -1059,7 +1059,7 @@
     .leaf {
       --w: 15vmin;
       --h: 40vmin;
-      --c: #4aa8e0;
+      --c: #43a047;
 
       position: absolute;
       bottom: 0;

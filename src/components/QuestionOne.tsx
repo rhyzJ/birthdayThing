@@ -43,20 +43,6 @@ export default function QuestionOne({ onAdvance }: StepProps) {
           No tis not
         </motion.button>
       </div>
-
-      <AnimatePresence>
-        {showSnark && (
-          <motion.p
-            key="snark"
-            className="text-lg font-medium text-rose-600"
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-          >
-            Are u stoopid? x
-          </motion.p>
-        )}
-      </AnimatePresence>
     </div>
   );
 }

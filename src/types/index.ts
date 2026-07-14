@@ -1,5 +1,6 @@
 // Shared step state for the birthday card flow.
 export enum Step {
+  Password,
   QuestionOne,
   QuestionTwo,
   QuestionThree,

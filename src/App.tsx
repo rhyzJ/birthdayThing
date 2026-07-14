@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Step } from './types'
 import { BACKGROUND_IMAGE } from './constants/assets'
+import PasswordGate from './components/PasswordGate'
 import QuestionOne from './components/QuestionOne'
 import QuestionTwo from './components/QuestionTwo'
 import QuestionThree from './components/QuestionThree'
@@ -16,10 +17,12 @@ const variants = {
 }
 
 export default function App() {
-  const [step, setStep] = useState<Step>(Step.QuestionOne)
+  const [step, setStep] = useState<Step>(Step.Password)
 
   const renderStep = () => {
     switch (step) {
+      case Step.Password:
+        return <PasswordGate onAdvance={() => setStep(Step.QuestionOne)} />
       case Step.QuestionOne:
         return <QuestionOne onAdvance={() => setStep(Step.QuestionTwo)} />
       case Step.QuestionTwo:

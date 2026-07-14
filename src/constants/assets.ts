@@ -8,8 +8,8 @@
 const asset = (path: string) =>
   path ? `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}` : ''
 
-// Drop a photo at public/jackieFace.png and change '' to asset('/jackieFace.png') to use it.
-export const JACKIE_PHOTO = '' // Jackie's photo — hero/avatar on the reveal screen (empty → emoji fallback)
+export const JACKIE_PHOTO = asset('/jackie-face.png') // Jackie's goofy close-up — Q3 ranking avatar
+export const JACKIE_REVEAL_PHOTO = asset('/jackie-noodle-2.png') // Jackie + Noodle at the beach — featured photo on the reveal screen
 export const RHY_PHOTO = asset('/rhya.png') // Rhy's photo — used in the gift screen + "Who is cooler?" step
 export const NOODLE_PHOTO = asset('/noodle.png') // Noodle the dog — Q3 ranking option
 export const BACKGROUND_IMAGE = '' // Optional background image or pattern (CSS url value)
@@ -18,8 +18,8 @@ export const CELEBRATION_GIF = '' // Celebration GIF for the final screen
 
 // 🤪 Reaction faces for wrong answers.
 export const HATE_ME_FACE = asset('/doYouHateMe.png') // Q1 — said it's NOT their birthday
-export const GRIMACE_FACE = asset('/grimace.png') // Q2 — wrong name
-export const MLEM_FACE = asset('/mlem.png') // Q2 — used a nickname instead of full name
+export const GRIMACE_FACE = asset('/rhya-scrunch.png') // Q2 — wrong name (Rhya's scrunched 'nope' face)
+export const MLEM_FACE = asset('/jackie-icecream.png') // Q2 — used a nickname instead of full name (mlem 😛)
 
 // 😜 Emoji fallbacks used when the matching photo above is empty.
 export const JACKIE_EMOJI = '🐱'

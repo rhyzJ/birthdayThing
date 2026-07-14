@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import type { StepProps } from '../types'
-import { JACKIE_PHOTO, JACKIE_EMOJI } from '../constants/assets'
+import { JACKIE_REVEAL_PHOTO, JACKIE_EMOJI } from '../constants/assets'
 
 export default function BirthdayReveal({ onAdvance }: StepProps) {
   return (
@@ -11,15 +11,15 @@ export default function BirthdayReveal({ onAdvance }: StepProps) {
       transition={{ type: 'spring', stiffness: 200, damping: 16 }}
     >
       <motion.div
-        className="flex h-40 w-40 items-center justify-center overflow-hidden rounded-full bg-white shadow-2xl ring-4 ring-white/70"
+        className="flex w-56 items-center justify-center overflow-hidden rounded-3xl bg-white shadow-2xl ring-4 ring-white/70"
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 260, damping: 14, delay: 0.2 }}
       >
-        {JACKIE_PHOTO ? (
-          <img src={JACKIE_PHOTO} alt="Jackie" className="h-full w-full object-cover" />
+        {JACKIE_REVEAL_PHOTO ? (
+          <img src={JACKIE_REVEAL_PHOTO} alt="Jackie" className="h-auto w-full object-cover" />
         ) : (
-          <span className="text-7xl">{JACKIE_EMOJI}</span>
+          <span className="py-10 text-7xl">{JACKIE_EMOJI}</span>
         )}
       </motion.div>
 

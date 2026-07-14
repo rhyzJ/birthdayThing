@@ -57,9 +57,8 @@ export default function GiftAnimation() {
             transition={{
               duration: b.duration,
               delay: b.delay,
-              ease: "easeIn",
+              ease: "linear",
               repeat: Infinity,
-              repeatDelay: 0.3,
             }}
           >
             {b.id % 2 === 0 ? "🐱" : "🐾"}

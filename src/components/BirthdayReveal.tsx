@@ -29,7 +29,7 @@ export default function BirthdayReveal({ onAdvance }: StepProps) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.35 }}
       >
-        Happy Birfday pooker
+        Happy 30th Birfday pooker
       </motion.h1>
 
       <motion.p

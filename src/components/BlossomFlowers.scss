@@ -11,18 +11,25 @@
   overflow: hidden;
   perspective: 1000px;
 
+  // Pin the whole scene to its own stable compositing layer. Without this the
+  // browser periodically drops the heavy fixed + perspective + many-infinite-3D
+  // -animation layer, which made the whole scene (flowers, stems, grass)
+  // flicker out and reappear.
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+
   &.not-loaded * {
     animation-play-state: paused !important;
   }
 
   .night {
-    position: fixed;
+    position: absolute;
     left: 50%;
     top: 0;
     transform: translateX(-50%);
     width: 100%;
     height: 100%;
-    filter: blur(0.1vmin);
     background-image: radial-gradient(
         ellipse at top,
         transparent 0%,

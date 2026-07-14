@@ -16,7 +16,7 @@ export default function GiftAnimation() {
       >
         <div className="rounded-4xl border border-white/40 bg-white/15 px-8 py-5 text-center shadow-xl backdrop-blur-md">
           <p className="text-2xl font-semibold text-white drop-shadow-md sm:text-3xl">
-            sum flowers for you pookie 🐱💐
+            sum flowers for you pookie wookie
           </p>
         </div>
       </motion.div>

@@ -3,9 +3,10 @@ import { motion } from 'framer-motion'
 
 interface TickOverlayProps {
   onComplete: () => void
+  message?: string
 }
 
-export default function TickOverlay({ onComplete }: TickOverlayProps) {
+export default function TickOverlay({ onComplete, message = 'Obviously 😌' }: TickOverlayProps) {
   useEffect(() => {
     const t = setTimeout(onComplete, 2500)
     return () => clearTimeout(t)
@@ -32,7 +33,7 @@ export default function TickOverlay({ onComplete }: TickOverlayProps) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.25 }}
       >
-        Obviously 😌
+        {message}
       </motion.p>
     </motion.div>
   )

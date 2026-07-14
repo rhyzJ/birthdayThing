@@ -1,26 +1,7 @@
-import { useMemo } from "react";
 import { motion } from "framer-motion";
 import BlossomFlowers from "./BlossomFlowers";
 
-function rand(min: number, max: number) {
-  return Math.random() * (max - min) + min;
-}
-
 export default function GiftAnimation() {
-  const balls = useMemo(
-    () =>
-      Array.from({ length: 18 }).map((_, i) => ({
-        id: i,
-        left: rand(0, 100),
-        size: rand(26, 54),
-        delay: rand(0, 3),
-        duration: rand(4.5, 8),
-        drift: rand(-40, 40),
-        spin: rand(360, 900) * (i % 2 === 0 ? 1 : -1),
-      })),
-    [],
-  );
-
   return (
     <div className="relative flex min-h-full w-full flex-col items-center justify-center">
       {/* Magical night garden — full-screen backdrop */}
@@ -39,32 +20,6 @@ export default function GiftAnimation() {
           </p>
         </div>
       </motion.div>
-
-      {/* Cat rain over the scene */}
-      <div className="pointer-events-none fixed inset-0 z-20">
-        {balls.map((b) => (
-          <motion.span
-            key={b.id}
-            className="absolute top-[-10%]"
-            style={{ left: `${b.left}%`, fontSize: b.size }}
-            initial={{ y: "-15vh", x: 0, opacity: 0, rotate: 0 }}
-            animate={{
-              y: "115vh",
-              x: b.drift,
-              opacity: [0, 1, 1, 0.9],
-              rotate: b.spin,
-            }}
-            transition={{
-              duration: b.duration,
-              delay: b.delay,
-              ease: "linear",
-              repeat: Infinity,
-            }}
-          >
-            {b.id % 2 === 0 ? "🐱" : "🐾"}
-          </motion.span>
-        ))}
-      </div>
     </div>
   );
 }

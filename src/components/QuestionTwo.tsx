@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { StepProps } from "../types";
-import Confetti from "./Confetti";
+import TickOverlay from "./TickOverlay";
 import { GRIMACE_FACE, MLEM_FACE } from "../constants/assets";
 
 export default function QuestionTwo({ onAdvance }: StepProps) {
@@ -10,7 +10,7 @@ export default function QuestionTwo({ onAdvance }: StepProps) {
   const [errorType, setErrorType] = useState<null | "wrong" | "shortName">(
     null,
   );
-  const [confetti, setConfetti] = useState(false);
+  const [showTick, setShowTick] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -18,8 +18,7 @@ export default function QuestionTwo({ onAdvance }: StepProps) {
 
     if (name === "pookie") {
       setErrorType(null);
-      setConfetti(true);
-      setTimeout(onAdvance, 1400);
+      setShowTick(true);
       return;
     }
 
@@ -30,8 +29,6 @@ export default function QuestionTwo({ onAdvance }: StepProps) {
 
   return (
     <div className="flex w-full max-w-md flex-col items-center gap-8 text-center">
-      {confetti && <Confetti onComplete={() => setConfetti(false)} />}
-
       <motion.h1
         className="text-4xl font-bold text-slate-800 sm:text-5xl"
         initial={{ y: 20, opacity: 0 }}
@@ -67,6 +64,13 @@ export default function QuestionTwo({ onAdvance }: StepProps) {
       </form>
 
       <AnimatePresence mode="wait">
+        {showTick && (
+          <TickOverlay
+            key="tick"
+            onComplete={onAdvance}
+            message="iz correct"
+          />
+        )}
         {errorType === "wrong" && (
           <motion.div
             key="err"

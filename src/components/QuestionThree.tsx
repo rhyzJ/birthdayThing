@@ -26,6 +26,13 @@ const PHOTOS: Record<Choice, string> = {
   jackie: JACKIE_PHOTO,
 }
 
+// Each option gets its own colour so no two rows match.
+const ROW_BG: Record<Choice, string> = {
+  rhy: 'bg-gradient-to-r from-sky-300 to-sky-200',
+  noodle: 'bg-gradient-to-r from-amber-200 to-orange-200',
+  jackie: 'bg-gradient-to-r from-rose-300 to-pink-200',
+}
+
 export default function QuestionThree({ onAdvance }: StepProps) {
   const [order, setOrder] = useState<Choice[]>(['jackie', 'rhy', 'noodle'])
   const [xMessage, setXMessage] = useState<string | null>(null)
@@ -64,11 +71,7 @@ export default function QuestionThree({ onAdvance }: StepProps) {
             key={choice}
             value={choice}
             whileDrag={{ scale: 1.04 }}
-            className={`flex cursor-grab items-center gap-3 rounded-4xl px-8 py-4 text-xl font-semibold text-slate-800 shadow-lg ring-2 ring-white/60 active:cursor-grabbing ${
-              choice === 'rhy'
-                ? 'bg-gradient-to-r from-sky-300 to-sky-200'
-                : 'bg-white'
-            }`}
+            className={`flex cursor-grab items-center gap-3 rounded-4xl px-8 py-4 text-xl font-semibold text-slate-800 shadow-lg ring-2 ring-white/60 active:cursor-grabbing ${ROW_BG[choice]}`}
           >
             <span className="text-lg font-bold text-slate-400">
               {index + 1}.

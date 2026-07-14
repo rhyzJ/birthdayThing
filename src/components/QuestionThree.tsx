@@ -6,28 +6,28 @@ import TickOverlay from './TickOverlay'
 import {
   RHY_PHOTO,
   NOODLE_PHOTO,
-  DAKOTA_PHOTO,
+  JACKIE_PHOTO,
   RHY_EMOJI,
 } from '../constants/assets'
 
-type Choice = 'rhy' | 'noodle' | 'dakota'
+type Choice = 'rhy' | 'noodle' | 'jackie'
 
-const CORRECT_ORDER: Choice[] = ['rhy', 'noodle', 'dakota']
+const CORRECT_ORDER: Choice[] = ['rhy', 'noodle', 'jackie']
 
 const LABELS: Record<Choice, string> = {
   rhy: 'Rhy ',
   noodle: 'Lack of balls',
-  dakota: 'Dahkodah',
+  jackie: 'Jackie',
 }
 
 const PHOTOS: Record<Choice, string> = {
   rhy: RHY_PHOTO,
   noodle: NOODLE_PHOTO,
-  dakota: DAKOTA_PHOTO,
+  jackie: JACKIE_PHOTO,
 }
 
 export default function QuestionThree({ onAdvance }: StepProps) {
-  const [order, setOrder] = useState<Choice[]>(['dakota', 'rhy', 'noodle'])
+  const [order, setOrder] = useState<Choice[]>(['jackie', 'rhy', 'noodle'])
   const [xMessage, setXMessage] = useState<string | null>(null)
   const [showTick, setShowTick] = useState(false)
 

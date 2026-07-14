@@ -35,12 +35,12 @@ export default function GiftAnimation() {
       >
         <div className="rounded-4xl border border-white/40 bg-white/15 px-8 py-5 text-center shadow-xl backdrop-blur-md">
           <p className="text-2xl font-semibold text-white drop-shadow-md sm:text-3xl">
-            sum flowers for you pookie 💐
+            sum flowers for you pookie 🐱💐
           </p>
         </div>
       </motion.div>
 
-      {/* Basketball rain over the scene */}
+      {/* Cat rain over the scene */}
       <div className="pointer-events-none fixed inset-0 z-20">
         {balls.map((b) => (
           <motion.span
@@ -62,7 +62,7 @@ export default function GiftAnimation() {
               repeatDelay: 0.3,
             }}
           >
-            🏀
+            {b.id % 2 === 0 ? "🐱" : "🐾"}
           </motion.span>
         ))}
       </div>

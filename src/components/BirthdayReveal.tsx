@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import type { StepProps } from '../types'
-import { DAKOTA_PHOTO, DAKOTA_EMOJI } from '../constants/assets'
+import { JACKIE_PHOTO, JACKIE_EMOJI } from '../constants/assets'
 
 export default function BirthdayReveal({ onAdvance }: StepProps) {
   return (
@@ -16,10 +16,10 @@ export default function BirthdayReveal({ onAdvance }: StepProps) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 260, damping: 14, delay: 0.2 }}
       >
-        {DAKOTA_PHOTO ? (
-          <img src={DAKOTA_PHOTO} alt="Dakota" className="h-full w-full object-cover" />
+        {JACKIE_PHOTO ? (
+          <img src={JACKIE_PHOTO} alt="Jackie" className="h-full w-full object-cover" />
         ) : (
-          <span className="text-7xl">{DAKOTA_EMOJI}</span>
+          <span className="text-7xl">{JACKIE_EMOJI}</span>
         )}
       </motion.div>
 
@@ -29,7 +29,7 @@ export default function BirthdayReveal({ onAdvance }: StepProps) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.35 }}
       >
-        Happy Birthday bebeeee 🎉
+        Happy Birthday pookie 🐱🎉
       </motion.h1>
 
       <motion.p
@@ -38,7 +38,7 @@ export default function BirthdayReveal({ onAdvance }: StepProps) {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
-        Getting dangerously close to 30 there oldie
+        hehe you old unc now 🐾
       </motion.p>
 
       <motion.button

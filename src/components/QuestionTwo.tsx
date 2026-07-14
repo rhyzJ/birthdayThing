@@ -16,14 +16,14 @@ export default function QuestionTwo({ onAdvance }: StepProps) {
     e.preventDefault();
     const name = value.trim().toLowerCase();
 
-    if (name === "dakota") {
+    if (name === "pookie") {
       setErrorType(null);
       setConfetti(true);
       setTimeout(onAdvance, 1400);
       return;
     }
 
-    setErrorType(name === "kota" ? "shortName" : "wrong");
+    setErrorType(name === "jackie" ? "shortName" : "wrong");
     setShake(true);
     setTimeout(() => setShake(false), 500);
   };
@@ -96,7 +96,7 @@ export default function QuestionTwo({ onAdvance }: StepProps) {
             exit={{ opacity: 0 }}
           >
             <p className="text-lg font-medium text-rose-600">
-              nahhh use proper name pls thats the cats name
+              nahhh thats not what i call u pookie 🐱
             </p>
             {MLEM_FACE && (
               <img

@@ -19,7 +19,7 @@ export default function QuestionOne({ onAdvance }: StepProps) {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        Is it your birfday today?
+        Is it your birfday today? 🐱
       </motion.h1>
 
       <div className="flex w-full flex-col gap-4 sm:flex-row sm:justify-center">

@@ -15,7 +15,7 @@ export default function GiftAnimation() {
         transition={{ delay: 0.6, type: "spring", stiffness: 120, damping: 14 }}
       >
         <div className="rounded-4xl border border-white/40 bg-white/15 px-8 py-5 text-center shadow-xl backdrop-blur-md">
-          <p className="text-2xl font-semibold text-white drop-shadow-md sm:text-3xl">
+          <p className="text-2xl font-semibold text-white drop-shadow-md sm:text-2xl">
             sum flowers for you
           </p>
           <p className="text-sm font-semibold text-white drop-shadow-md sm:text-sm">

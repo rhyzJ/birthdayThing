@@ -15,9 +15,9 @@ type Choice = 'rhy' | 'noodle' | 'jackie'
 const CORRECT_ORDER: Choice[] = ['rhy', 'noodle', 'jackie']
 
 const LABELS: Record<Choice, string> = {
-  rhy: 'Rhy ',
+  rhy: 'Rhy-izzler',
   noodle: 'Lack of balls',
-  jackie: 'Jackie',
+  jackie: 'Jackie Jiahao Wu',
 }
 
 const PHOTOS: Record<Choice, string> = {

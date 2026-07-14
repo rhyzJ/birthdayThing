@@ -19,7 +19,7 @@ export const CELEBRATION_GIF = '' // Celebration GIF for the final screen
 // 🤪 Reaction faces for wrong answers.
 export const HATE_ME_FACE = asset('/doYouHateMe.png') // Q1 — said it's NOT their birthday
 export const GRIMACE_FACE = asset('/rhya-scrunch.png') // Q2 — wrong name (Rhya's scrunched 'nope' face)
-export const MLEM_FACE = asset('/jackie-icecream.png') // Q2 — used a nickname instead of full name (mlem 😛)
+export const MLEM_FACE = asset('/cat-w-eyebrows.png') // Q2 — used a nickname instead of full name (eyebrows cat 🤨)
 
 // 😜 Emoji fallbacks used when the matching photo above is empty.
 export const JACKIE_EMOJI = '🐱'

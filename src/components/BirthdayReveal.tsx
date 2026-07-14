@@ -29,7 +29,7 @@ export default function BirthdayReveal({ onAdvance }: StepProps) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.35 }}
       >
-        Happy Birthday pookie 🐱🎉
+        Happy Birfday pooker
       </motion.h1>
 
       <motion.p
@@ -38,7 +38,7 @@ export default function BirthdayReveal({ onAdvance }: StepProps) {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
-        hehe you old unc now 🐾
+        hehe you old wize unc now
       </motion.p>
 
       <motion.button

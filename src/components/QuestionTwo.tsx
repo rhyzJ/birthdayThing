@@ -96,7 +96,7 @@ export default function QuestionTwo({ onAdvance }: StepProps) {
             exit={{ opacity: 0 }}
           >
             <p className="text-lg font-medium text-rose-600">
-              nahhh thats not what i call u pookie 🐱
+              nahhh thats not what i call u tho iz it
             </p>
             {MLEM_FACE && (
               <img

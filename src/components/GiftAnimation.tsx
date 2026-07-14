@@ -19,7 +19,7 @@ export default function GiftAnimation() {
             sum flowers for you
           </p>
           <p className="text-sm font-semibold text-white drop-shadow-md sm:text-sm">
-            (pls appreciate my animation skills it take ages i am not good
+            (pls appreciate my animation skills it took ages i am not good
             animator)
           </p>
         </div>

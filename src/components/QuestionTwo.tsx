@@ -44,7 +44,7 @@ export default function QuestionTwo({ onAdvance }: StepProps) {
         <motion.input
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          placeholder="Type it in pls stoopid...x"
+          placeholder="Type it in pls stoopid"
           autoFocus
           animate={shake ? { x: [0, -12, 12, -10, 10, -6, 6, 0] } : { x: 0 }}
           transition={{ duration: 0.5 }}
@@ -65,11 +65,7 @@ export default function QuestionTwo({ onAdvance }: StepProps) {
 
       <AnimatePresence mode="wait">
         {showTick && (
-          <TickOverlay
-            key="tick"
-            onComplete={onAdvance}
-            message="iz correct"
-          />
+          <TickOverlay key="tick" onComplete={onAdvance} message="iz correct" />
         )}
         {errorType === "wrong" && (
           <motion.div
